@@ -10,17 +10,23 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
+  ...compat.config({ extends: ["next/core-web-vitals"] }),
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
-    languageOptions: {
-      parser: "@typescript-eslint/parser",
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
+    extends: [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-type-checked",
+    ],
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      project: "./tsconfig.json",
     },
-    rules: {},
+    rules: {
+      // Your custom rules here
+    },
   },
 ];
 

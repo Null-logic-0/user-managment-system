@@ -26,9 +26,7 @@ function LoginForm() {
         htmlFor="password"
         label="Password"
       />
-      <div>
-        <FormError error={errorMessage} />
-      </div>
+      <FormError error={errorMessage} />
 
       <FormSubmit>Login</FormSubmit>
     </form>
