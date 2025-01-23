@@ -9,8 +9,6 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const errorMessage = searchParams.get("errorMessage");
 
-  console.log(errorMessage, "mes");
-
   return (
     <form className=" flex flex-col gap-8 p-5 rounded-b" action={login}>
       <Input
